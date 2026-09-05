@@ -11,6 +11,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -18,6 +22,30 @@
       color: white;
       font-family: Arial, sans-serif;
       padding: 35px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND VIDEO */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* LAPISAN GELAP DI ATAS VIDEO */
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -1;
     }
 
     .container {
@@ -26,6 +54,7 @@
       text-align: center;
     }
 
+    /* LOGO UTAMA */
     .logo {
       width: 120px;
       height: 120px;
@@ -40,39 +69,53 @@
     }
 
     .description {
-      color: #999;
+      color: #cccccc;
       font-size: 18px;
       margin-bottom: 35px;
     }
 
+    /* LINK BUTTON */
     .link {
       display: flex;
       align-items: center;
       text-decoration: none;
       color: white;
-      background: #181818;
-      border: 1px solid #292929;
+      background: rgba(24, 24, 24, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 25px;
       padding: 18px 22px;
       margin: 15px 0;
       transition: 0.2s;
+      backdrop-filter: blur(5px);
     }
 
     .link:hover {
-      background: #222222;
+      background: rgba(38, 38, 38, 0.95);
       transform: translateY(-2px);
     }
 
+    /* ICON */
     .icon {
       width: 55px;
       height: 55px;
+      min-width: 55px;
       border-radius: 18px;
       background: #222222;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 27px;
       margin-right: 18px;
+      overflow: hidden;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .icon-emoji {
+      font-size: 27px;
     }
 
     .text {
@@ -87,19 +130,21 @@
     }
 
     .sub {
-      color: #888;
+      color: #999999;
       font-size: 15px;
     }
 
     .arrow {
-      color: #777;
+      color: #777777;
       font-size: 25px;
+      margin-left: 10px;
     }
 
+    /* INFO */
     .info {
       margin-top: 40px;
       text-align: left;
-      color: #aaa;
+      color: #cccccc;
       line-height: 1.6;
     }
 
@@ -114,10 +159,11 @@
       margin-bottom: 15px;
     }
 
+    /* FOOTER */
     footer {
       margin-top: 50px;
       padding-top: 25px;
-      border-top: 1px solid #292929;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
       text-align: center;
     }
 
@@ -129,23 +175,81 @@
     }
 
     .footer-services {
-      color: #777;
+      color: #999999;
       font-size: 13px;
       margin-bottom: 15px;
     }
 
     .footer-copy {
-      color: #555;
+      color: #777777;
       font-size: 12px;
+    }
+
+    /* TAMPILAN HP */
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      .logo {
+        width: 105px;
+        height: 105px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .link {
+        padding: 15px 17px;
+      }
+
+      .icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        border-radius: 16px;
+        margin-right: 15px;
+      }
+
+      .title {
+        font-size: 17px;
+      }
+
+      .sub {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- BACKGROUND VIDEO -->
+  <video
+    class="background-video"
+    autoplay
+    muted
+    loop
+    playsinline>
+    <source src="background.mp4" type="video/mp4">
+  </video>
+
+  <!-- LAPISAN GELAP -->
+  <div class="video-overlay"></div>
+
+
   <div class="container">
 
-    <img src="gumampio-logo.png" alt="Gumampio Store" class="logo">
+    <!-- LOGO UTAMA -->
+    <img
+      src="gumampio-logo.png"
+      alt="Gumampio Store"
+      class="logo">
 
     <h1>Gumampio Store</h1>
 
@@ -154,135 +258,211 @@
     </div>
 
 
-    <a href="https://chat.whatsapp.com/EhXTu8erM0TCsoQnZb3Sep"
-       class="link"
-       target="_blank">
+    <!-- GROUP 1 -->
+    <a
+      href="https://chat.whatsapp.com/EhXTu8erM0TCsoQnZb3Sep"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <div class="icon">💬</div>
-
-      <div class="text">
-        <div class="title">Gumampio Store | GROUP 1</div>
-        <div class="sub">Grup WhatsApp resmi</div>
+      <div class="icon">
+        <img src="group1.png" alt="Group 1">
       </div>
 
-      <div class="arrow">›</div>
+      <div class="text">
+        <div class="title">
+          Gumampio Store | GROUP 1
+        </div>
 
+        <div class="sub">
+          Grup WhatsApp resmi
+        </div>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
     </a>
 
 
-    <a href="https://chat.whatsapp.com/DnliaS0F72t0liy0A004G5"
-       class="link"
-       target="_blank">
+    <!-- GROUP 2 -->
+    <a
+      href="https://chat.whatsapp.com/DnliaS0F72t0liy0A004G5"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <div class="icon">💬</div>
-
-      <div class="text">
-        <div class="title">Gumampio Store | GROUP 2</div>
-        <div class="sub">Grup WhatsApp resmi</div>
+      <div class="icon">
+        <img src="group2.png" alt="Group 2">
       </div>
 
-      <div class="arrow">›</div>
+      <div class="text">
+        <div class="title">
+          Gumampio Store | GROUP 2
+        </div>
 
+        <div class="sub">
+          Grup WhatsApp resmi
+        </div>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
     </a>
 
 
-    <a href="https://chat.whatsapp.com/FW9bWbt2SGAJnHIDb7oq6Q"
-       class="link"
-       target="_blank">
+    <!-- GROUP 3 -->
+    <a
+      href="https://chat.whatsapp.com/FW9bWbt2SGAJnHIDb7oq6Q"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <div class="icon">💬</div>
-
-      <div class="text">
-        <div class="title">Gumampio Store | GROUP 3</div>
-        <div class="sub">Grup WhatsApp resmi</div>
+      <div class="icon">
+        <img src="group3.png" alt="Group 3">
       </div>
 
-      <div class="arrow">›</div>
+      <div class="text">
+        <div class="title">
+          Gumampio Store | GROUP 3
+        </div>
 
+        <div class="sub">
+          Grup WhatsApp resmi
+        </div>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
     </a>
 
 
-    <a href="https://whatsapp.com/channel/0029Vb6oLaTC1FuCcVICWJ1Y"
-       class="link"
-       target="_blank">
+    <!-- CHANNEL -->
+    <!-- LOGO CHANNEL TETAP SEPERTI SEBELUMNYA -->
+    <a
+      href="https://whatsapp.com/channel/0029Vb6oLaTC1FuCcVICWJ1Y"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <div class="icon">📢</div>
-
-      <div class="text">
-        <div class="title">Channel Gumampio Store</div>
-        <div class="sub">Channel WhatsApp resmi</div>
+      <div class="icon icon-emoji">
+        📢
       </div>
 
-      <div class="arrow">›</div>
+      <div class="text">
+        <div class="title">
+          Channel Gumampio Store
+        </div>
 
+        <div class="sub">
+          Channel WhatsApp resmi
+        </div>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
     </a>
 
 
-    <a href="https://youtube.com/@gumampio"
-       class="link"
-       target="_blank">
+    <!-- YOUTUBE -->
+    <a
+      href="https://youtube.com/@gumampio"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <div class="icon">▶</div>
-
-      <div class="text">
-        <div class="title">YouTube</div>
-        <div class="sub">Channel YouTube Gumampio</div>
+      <div class="icon">
+        <img src="youtube.png" alt="YouTube">
       </div>
 
-      <div class="arrow">›</div>
+      <div class="text">
+        <div class="title">
+          YouTube
+        </div>
 
+        <div class="sub">
+          Channel YouTube Gumampio
+        </div>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
     </a>
 
 
-    <a href="https://wa.me/6285142623306"
-       class="link"
-       target="_blank">
+    <!-- ADMIN -->
+    <a
+      href="https://wa.me/6285142623306"
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <div class="icon">👤</div>
-
-      <div class="text">
-        <div class="title">Hubungi Admin</div>
-        <div class="sub">Chat WhatsApp Admin</div>
+      <div class="icon">
+        <img src="admin.jpeg" alt="Admin">
       </div>
 
-      <div class="arrow">›</div>
+      <div class="text">
+        <div class="title">
+          Hubungi Admin
+        </div>
 
+        <div class="sub">
+          Chat WhatsApp Admin
+        </div>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
     </a>
 
 
+    <!-- TENTANG GUMAMPIO STORE -->
     <div class="info">
 
-      <h2>Tentang Gumampio Store</h2>
+      <h2>
+        Tentang Gumampio Store
+      </h2>
 
       <p>
-        Gumampio Store melayani <b>top up game</b>, serta
+        Gumampio Store melayani
+        <b>top up game</b>, serta
         <b>jual & beli akun Mobile Legends</b>.
       </p>
 
       <p>
         Gumampio Store juga menyediakan layanan
-        <b>Rekber (Rekening Bersama)</b> sebagai penengah
-        transaksi dan pengaman dana.
+        <b>Rekber (Rekening Bersama)</b>
+        sebagai penengah transaksi dan pengaman dana.
       </p>
 
     </div>
 
 
+    <!-- KETENTUAN REKBER -->
     <div class="info">
 
-      <h2>Ketentuan Rekber</h2>
+      <h2>
+        Ketentuan Rekber
+      </h2>
 
       <p>
         Gumampio Store bertindak sebagai
         <b>penengah transaksi dan pengaman dana</b>
-        dalam jual beli akun Mobile Legends. Jika akun tidak sesuai
-        kesepakatan dan transaksi dibatalkan,
-        <b>dana beserta biaya admin Rekber akan dikembalikan</b>.
+        dalam jual beli akun Mobile Legends.
+        Jika akun tidak sesuai kesepakatan dan transaksi
+        dibatalkan, <b>dana beserta biaya admin Rekber
+        akan dikembalikan</b>.
       </p>
 
     </div>
 
 
+    <!-- FOOTER -->
     <footer>
 
       <div class="footer-brand">
