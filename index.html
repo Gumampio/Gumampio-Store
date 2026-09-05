@@ -1,115 +1,162 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <img src="gumampio-logo.png">
-<title>Gumampio Store</title>
-<meta name="description" content="Gumampio Store - Link resmi dan informasi komunitas.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Inter,Arial,sans-serif;
-  min-height:100vh;
-  color:#fff;
-  background:
-    radial-gradient(circle at 50% -10%,#333 0,transparent 38%),
-    linear-gradient(160deg,#0b0b0d,#151518 55%,#080809);
-  padding:32px 18px;
-}
-.container{max-width:520px;margin:auto;text-align:center}
-.logo{
-  width:82px;height:82px;border-radius:24px;margin:8px auto 18px;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(145deg,#fff,#aaa);
-  color:#111;font-weight:900;font-size:25px;
-  box-shadow:0 12px 35px #0008;
-}
-h1{font-size:29px;letter-spacing:-.8px}
-.subtitle{color:#aaa;margin:8px 0 26px;font-size:14px}
-.links{display:grid;gap:13px}
-.link{
-  display:flex;align-items:center;gap:14px;
-  padding:17px 19px;border:1px solid #ffffff16;
-  border-radius:16px;text-decoration:none;color:#fff;
-  background:#ffffff09;backdrop-filter:blur(10px);
-  transition:.2s;
-}
-.link:hover{transform:translateY(-2px);background:#ffffff12}
-.icon{
-  width:40px;height:40px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  background:#ffffff12;font-size:18px
-}
-.text{text-align:left;flex:1}
-.text b{display:block;font-size:15px}
-.text span{display:block;color:#999;font-size:12px;margin-top:3px}
-.arrow{color:#777;font-size:20px}
-.section{
-  margin-top:30px;padding:20px;border:1px solid #ffffff12;
-  border-radius:18px;background:#ffffff07;text-align:left
-}
-.section h2{font-size:16px;margin-bottom:9px}
-.section p{font-size:13px;line-height:1.7;color:#aaa}
-footer{margin:28px 0 5px;color:#666;font-size:11px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gumampio Store</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      <img src="gumampio-logo.png">
+      margin: 0;
+      min-height: 100vh;
+      background: #111111;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 35px 20px;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 5px 0 10px;
+    }
+
+    .description {
+      color: #999;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      background: #181818;
+      border: 1px solid #292929;
+      border-radius: 25px;
+      padding: 18px 22px;
+      margin: 15px 0;
+      transition: 0.2s;
+    }
+
+    .link:hover {
+      background: #222222;
+      transform: translateY(-2px);
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 18px;
+      background: #222222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      margin-right: 18px;
+    }
+
+    .text {
+      text-align: left;
+      flex: 1;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .sub {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .arrow {
+      color: #777;
+      font-size: 25px;
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <div class="logo">GS</div>
-  <h1>Gumampio Store</h1>
-  <p class="subtitle">Link resmi & pusat informasi Gumampio Store</p>
 
-  <div class="links">
-    <!-- GANTI LINK DI BAWAH INI -->
-    <a class="link" href="#" target="_blank">
+  <div class="container">
+
+    <img src="gumampio-logo.png" class="logo" alt="Gumampio Store">
+
+    <h1>Gumampio Store</h1>
+
+    <div class="description">
+      Link resmi & pusat informasi Gumampio Store
+    </div>
+
+    <a class="link" href="LINK_WHATSAPP" target="_blank">
       <div class="icon">💬</div>
-      <div class="text"><b>Grup WhatsApp</b><span>Gabung komunitas Gumampio Store</span></div>
+      <div class="text">
+        <div class="title">Grup WhatsApp</div>
+        <div class="sub">Gabung komunitas Gumampio Store</div>
+      </div>
       <div class="arrow">›</div>
     </a>
 
-    <a class="link" href="#" target="_blank">
+    <a class="link" href="LINK_TELEGRAM" target="_blank">
       <div class="icon">📢</div>
-      <div class="text"><b>Channel / Telegram</b><span>Info dan update terbaru</span></div>
+      <div class="text">
+        <div class="title">Channel / Telegram</div>
+        <div class="sub">Info dan update terbaru</div>
+      </div>
       <div class="arrow">›</div>
     </a>
 
-    <a class="link" href="#" target="_blank">
+    <a class="link" href="LINK_INSTAGRAM" target="_blank">
       <div class="icon">📸</div>
-      <div class="text"><b>Instagram</b><span>Follow akun resmi</span></div>
+      <div class="text">
+        <div class="title">Instagram</div>
+        <div class="sub">Follow akun resmi</div>
+      </div>
       <div class="arrow">›</div>
     </a>
 
-    <a class="link" href="#" target="_blank">
+    <a class="link" href="LINK_TIKTOK" target="_blank">
       <div class="icon">🎵</div>
-      <div class="text"><b>TikTok</b><span>Konten Gumampio Store</span></div>
+      <div class="text">
+        <div class="title">TikTok</div>
+        <div class="sub">Konten Gumampio Store</div>
+      </div>
       <div class="arrow">›</div>
     </a>
 
-    <a class="link" href="#" target="_blank">
+    <a class="link" href="LINK_MARKETPLACE" target="_blank">
       <div class="icon">🛒</div>
-      <div class="text"><b>Marketplace</b><span>Lihat produk yang tersedia</span></div>
+      <div class="text">
+        <div class="title">Marketplace</div>
+        <div class="sub">Lihat produk yang tersedia</div>
+      </div>
       <div class="arrow">›</div>
     </a>
+
   </div>
 
-  <div class="section">
-    <h2>Tentang Gumampio Store</h2>
-    <p>
-      Gumampio Store adalah pusat informasi dan komunitas.
-      Gunakan link di atas untuk menemukan akun, grup, dan layanan resmi kami.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Informasi</h2>
-    <p>
-      Pastikan hanya menggunakan akun dan grup yang tercantum di website ini
-      untuk menghindari akun palsu atau penipuan.
-    </p>
-  </div>
-
-  <footer>© 2026 Gumampio Store • All rights reserved</footer>
-</div>
 </body>
 </html>
