@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Gumampio Store</title>
+  <link rel="icon" type="image/png" href="gumampio-logo.png">
 
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -37,14 +34,14 @@
       z-index: -2;
     }
 
-    /* LAPISAN GELAP DI ATAS VIDEO */
+    /* OVERLAY */
     .video-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.60);
       z-index: -1;
     }
 
@@ -54,7 +51,7 @@
       text-align: center;
     }
 
-    /* LOGO UTAMA */
+    /* LOGO */
     .logo {
       width: 120px;
       height: 120px;
@@ -69,28 +66,35 @@
     }
 
     .description {
-      color: #cccccc;
+      color: #bbb;
       font-size: 18px;
       margin-bottom: 35px;
     }
 
-    /* LINK BUTTON */
+    /* GLASS BUTTON */
     .link {
       display: flex;
       align-items: center;
       text-decoration: none;
       color: white;
-      background: rgba(24, 24, 24, 0.88);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.20);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
       border-radius: 25px;
       padding: 18px 22px;
       margin: 15px 0;
+
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
       transition: 0.2s;
-      backdrop-filter: blur(5px);
     }
 
     .link:hover {
-      background: rgba(38, 38, 38, 0.95);
+      background: rgba(255, 255, 255, 0.16);
       transform: translateY(-2px);
     }
 
@@ -98,24 +102,24 @@
     .icon {
       width: 55px;
       height: 55px;
-      min-width: 55px;
       border-radius: 18px;
-      background: #222222;
+      background: rgba(255, 255, 255, 0.10);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      font-size: 27px;
       margin-right: 18px;
+
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .icon img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .icon-emoji {
-      font-size: 27px;
     }
 
     .text {
@@ -130,21 +134,20 @@
     }
 
     .sub {
-      color: #999999;
+      color: #bbb;
       font-size: 15px;
     }
 
     .arrow {
-      color: #777777;
+      color: #ccc;
       font-size: 25px;
-      margin-left: 10px;
     }
 
     /* INFO */
     .info {
       margin-top: 40px;
       text-align: left;
-      color: #cccccc;
+      color: #ccc;
       line-height: 1.6;
     }
 
@@ -175,25 +178,25 @@
     }
 
     .footer-services {
-      color: #999999;
+      color: #aaa;
       font-size: 13px;
       margin-bottom: 15px;
     }
 
     .footer-copy {
-      color: #777777;
+      color: #777;
       font-size: 12px;
     }
 
-    /* TAMPILAN HP */
+    /* MOBILE */
     @media (max-width: 600px) {
       body {
-        padding: 30px 15px;
+        padding: 25px 15px;
       }
 
       .logo {
-        width: 105px;
-        height: 105px;
+        width: 100px;
+        height: 100px;
       }
 
       h1 {
@@ -205,15 +208,14 @@
       }
 
       .link {
-        padding: 15px 17px;
+        padding: 15px 16px;
+        border-radius: 22px;
       }
 
       .icon {
         width: 50px;
         height: 50px;
-        min-width: 50px;
-        border-radius: 16px;
-        margin-right: 15px;
+        margin-right: 14px;
       }
 
       .title {
@@ -239,13 +241,11 @@
     <source src="background.mp4" type="video/mp4">
   </video>
 
-  <!-- LAPISAN GELAP -->
   <div class="video-overlay"></div>
-
 
   <div class="container">
 
-    <!-- LOGO UTAMA -->
+    <!-- LOGO -->
     <img
       src="gumampio-logo.png"
       alt="Gumampio Store"
@@ -262,8 +262,7 @@
     <a
       href="https://chat.whatsapp.com/EhXTu8erM0TCsoQnZb3Sep"
       class="link"
-      target="_blank"
-      rel="noopener noreferrer">
+      target="_blank">
 
       <div class="icon">
         <img src="group1.png" alt="Group 1">
@@ -279,9 +278,7 @@
         </div>
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
     </a>
 
 
@@ -289,8 +286,7 @@
     <a
       href="https://chat.whatsapp.com/DnliaS0F72t0liy0A004G5"
       class="link"
-      target="_blank"
-      rel="noopener noreferrer">
+      target="_blank">
 
       <div class="icon">
         <img src="group2.png" alt="Group 2">
@@ -306,9 +302,7 @@
         </div>
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
     </a>
 
 
@@ -316,8 +310,7 @@
     <a
       href="https://chat.whatsapp.com/FW9bWbt2SGAJnHIDb7oq6Q"
       class="link"
-      target="_blank"
-      rel="noopener noreferrer">
+      target="_blank">
 
       <div class="icon">
         <img src="group3.png" alt="Group 3">
@@ -333,21 +326,17 @@
         </div>
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
     </a>
 
 
     <!-- CHANNEL -->
-    <!-- LOGO CHANNEL TETAP SEPERTI SEBELUMNYA -->
     <a
       href="https://whatsapp.com/channel/0029Vb6oLaTC1FuCcVICWJ1Y"
       class="link"
-      target="_blank"
-      rel="noopener noreferrer">
+      target="_blank">
 
-      <div class="icon icon-emoji">
+      <div class="icon">
         📢
       </div>
 
@@ -361,9 +350,7 @@
         </div>
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
     </a>
 
 
@@ -371,8 +358,7 @@
     <a
       href="https://youtube.com/@gumampio"
       class="link"
-      target="_blank"
-      rel="noopener noreferrer">
+      target="_blank">
 
       <div class="icon">
         <img src="youtube.png" alt="YouTube">
@@ -388,9 +374,7 @@
         </div>
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
     </a>
 
 
@@ -398,8 +382,7 @@
     <a
       href="https://wa.me/6285142623306"
       class="link"
-      target="_blank"
-      rel="noopener noreferrer">
+      target="_blank">
 
       <div class="icon">
         <img src="admin.jpeg" alt="Admin">
@@ -415,29 +398,24 @@
         </div>
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
     </a>
 
 
-    <!-- TENTANG GUMAMPIO STORE -->
+    <!-- TENTANG -->
     <div class="info">
 
-      <h2>
-        Tentang Gumampio Store
-      </h2>
+      <h2>Tentang Gumampio Store</h2>
 
       <p>
-        Gumampio Store melayani
-        <b>top up game</b>, serta
+        Gumampio Store melayani <b>top up game</b>, serta
         <b>jual & beli akun Mobile Legends</b>.
       </p>
 
       <p>
         Gumampio Store juga menyediakan layanan
-        <b>Rekber (Rekening Bersama)</b>
-        sebagai penengah transaksi dan pengaman dana.
+        <b>Rekber (Rekening Bersama)</b> sebagai penengah
+        transaksi dan pengaman dana.
       </p>
 
     </div>
@@ -446,17 +424,14 @@
     <!-- KETENTUAN REKBER -->
     <div class="info">
 
-      <h2>
-        Ketentuan Rekber
-      </h2>
+      <h2>Ketentuan Rekber</h2>
 
       <p>
         Gumampio Store bertindak sebagai
         <b>penengah transaksi dan pengaman dana</b>
-        dalam jual beli akun Mobile Legends.
-        Jika akun tidak sesuai kesepakatan dan transaksi
-        dibatalkan, <b>dana beserta biaya admin Rekber
-        akan dikembalikan</b>.
+        dalam jual beli akun Mobile Legends. Jika akun tidak sesuai
+        kesepakatan dan transaksi dibatalkan,
+        <b>dana beserta biaya admin Rekber akan dikembalikan</b>.
       </p>
 
     </div>
